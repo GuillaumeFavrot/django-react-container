@@ -1,4 +1,4 @@
-# DJANGO-REACT-HEROKU-BOOTSTRAP Template (MongoDB edition)
+# DJANGO-REACT-MongoDB Template (Docker edition)
 
 This template has been created as a tool to speed up the process of creation and hosting of a fullstack app.
 
