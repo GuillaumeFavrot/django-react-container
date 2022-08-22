@@ -4,6 +4,8 @@ This template has been created as a tool to speed up the process of creation and
 
 DISCLAIMER : THIS TEMPLATE HAS BEEN CREATED FOR PERSONNAL USE AS A SIDE PROJECT IT DOES NOT NECESSERILY FEATURES THE BEST DEVLOPMENT PRACTICES. ITS ONLY GOAL IS TO PROVIDE SOME BOILERPLATE CODE FOR A FAST DEPLOYMENT OF A SIMPLE FULLSTACK APP.
 
+
+
 # TEMPLATE SETUP PROCEDURE
 
 This setup procedure is suitable for a freshly cloned folder (from git) on a fresh machine.
@@ -14,6 +16,8 @@ REQUIREMENTS :
 => NPM 8.15.0 OR LATER ;
 
 All other required packages and dependencies will be installed during the setup process. You'll find the full list of required packages in the requirement.txt and package.json files.
+
+
 
 # A - Environement setup
 
@@ -46,6 +50,8 @@ All javascript dependencies are listed in the package.json file.
 $ npn install
 
 This command will install all dependencies listed in the package.json file
+
+
 
 # B - Launching the developpement environement
 
@@ -85,6 +91,8 @@ localhost:3000
 
 In this template Django is configured to serve the React app on its root address however this require  a live build. While on a development build use the localhost address.
 
+
+
 # C - Creation of the .env file
 
 To run this template requires two environement variables, the MONGO_URI to connect to the DB and the DJANGO SECRET. For security reasons those variables are not directly set in the source code of the app. In a devloppement environement they are stored in a .env file and in production they are directly stored in Heroku. This is excluded from the github repository in order not to expose those variables to internet.
@@ -105,6 +113,8 @@ Note : if a python virtual environement is running DJango may not detect the new
 
 This template is a very simple app that only use two environement variables however more complex apps will use many more (hashing key, token key, etc...)   
 
+
+
 # UPDATING DEPENDENCIES
 
 # A. Python dependencies
@@ -123,13 +133,19 @@ $ pipenv update
 
 The requirement.txt and Pipfile.lock serves roughly the same purpose (for heroku) but the use of Pipfile.lock is considered a better practice.
 
+
+
 # B. Node dependencies
 
 The package.json update itself automatically when new dependencies are installed.
 
+
+
 # DESCRIPTION OF THE MAIN COMPONENTS OF THE APP
 
 This section contains a brief decription of all part of the app. All file within those parts are commented so refer to those files for further instructions.
+
+
 
 # A. 'api' folder :
 
@@ -138,11 +154,15 @@ This folder contains the main api of the app.  It's role is to handle http reque
 => A file used to setup mongoDB 'utils.py' and ;
 => A file responsible for request handling annd db calls 'views.py'.
 
+
+
 # B. 'backend' folder :
 
 This folder contains the backbone of the django app, the server. Its role is to listen for request on the urls of the app and route the traffic either to the frontend or to the api. Its main components are :
 => A routing file 'urls.py' ;
 => The main Django settings file 'settings.py'.
+
+
 
 # C. 'node_modules' folder :
 
@@ -150,11 +170,15 @@ This folder contains all the file of node modules and packages required for the 
 
 This folder is auto generated based on the list of packages listed in the package.json file.
 
+
+
 # D. 'public' folder :
 
 This folder is one of the main component of a react app. Its main component is the 'index.html' file. This file served by the react developpement server of the Django server in production contains all the react app in its only div called the root.
 
 This file is usually not to be modified.
+
+
 
 # E. 'src' folder :
 
@@ -164,6 +188,8 @@ This folder contains all the react JS logic of the app. Its main components are 
 => The CSS folder that contains custom css files.
 
 This folder is only used in a devloppement environement. When switching in production and using the '$ npm run build' commmand (heroku does it automatically), the script will bundle all CSS and JS files and store them into a 'static' folder inside the public folder.
+
+
 
 # F. Loose files :
 
@@ -179,9 +205,14 @@ This folder is only used in a devloppement environement. When switching in produ
 
 => requirements.txt, pipfile and pipfile.lock : Those files lists all python dependencies and packages required by the app to run. The pipfile files are generated from the requirement.txt file.
 
-=> Procfile : This file is required by Heroku and is specific to this platform to properly serve the main Django server in production using the gunicorn package.
-
 => runtime.txt : This file tells Heroku which version of python is used by the app.
+
+=> Dockerfile : This file contains all the instructions required by docker to build a container image.
+
+=> .dockerignore : This file lists all files and folder to leave aside the image building process
+
+
+
 
 # DOCKER IMAGE BUILDING PROCEDURE
 
@@ -200,6 +231,8 @@ $ python3 manage.py collectstatic
 
 This will generate a staticfiles folder a the root of the app using the content of the build folder generated by the previous operation. At this point the Django server will serve the React app on its root address (/) without the need to launch the react developement server.
 
+
+
 # B. Updating the dockerfile
 
 In order to move to a developpement build it's necessary to transfer the ENV variables to the container.
@@ -208,6 +241,8 @@ To do this add them to the dockerfile between the line COPY and the line RUN :
 
 ENV SECRET_KEY=your_django_secret_key
 ENV MONGO_URI=your_mongo_uri
+
+
 
 # C. Building the image
 
