@@ -135,7 +135,7 @@ export const testSlice = createSlice({
     [addTestMessage.fulfilled]: (state, { payload } ) => {
       let res = JSON.parse(payload)
       state.loading = false
-      state.statusText = res.status != 'Null' ? `POST Request ${res.statusText} with status code ${res.status}` : 'POST request failed with status code 404'  
+      state.statusText = res.status !== 'Null' ? `POST Request ${res.statusText} with status code ${res.status}` : 'POST request failed with status code 404'  
       state.messages = res.data
     },
     [addTestMessage.rejected]: (state, { error }) => {

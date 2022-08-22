@@ -44,7 +44,7 @@ export default function TestMessage({message}) {
       <h6>Message : </h6> 
       <form className='d-flex justify-content-between align-items-center'>
         <div className='d-flex justify-content-start'>
-          <a onClick={() => messageDeleteRequest()}className="text-danger me-1" type="submit">
+          <a onClick={() => messageDeleteRequest()}className="text-danger me-1" type="submit" href="/">
             <TrashIcon size={16} />
           </a>
           <p onClick={() => setToModification()} className={messageState === 'display' ? 'mb-0 d-block' : 'd-none'}>
@@ -52,7 +52,7 @@ export default function TestMessage({message}) {
           </p>
           <div className={messageState === 'display' ? 'd-none' : 'd-flex'}>
             <input onChange={(e) => onMessageChange(e)} className='form-control-sm'/>
-            <a onClick={(e) => messageModification(e)} className="text-danger ps-1" type="submit">
+            <a onClick={(e) => messageModification(e)} className="text-danger ps-1" type="submit" href="/">
               <CheckIcon size={16} />
             </a>
           </div>
