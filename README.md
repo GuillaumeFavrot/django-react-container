@@ -85,7 +85,7 @@ localhost:3000
 
 In this template Django is configured to serve the React app on its root address however this require  a live build. While on a development build use the localhost address.
 
-# Creation of the .env file
+# C - Creation of the .env file
 
 To run this template requires two environement variables, the MONGO_URI to connect to the DB and the DJANGO SECRET. For security reasons those variables are not directly set in the source code of the app. In a devloppement environement they are stored in a .env file and in production they are directly stored in Heroku. This is excluded from the github repository in order not to expose those variables to internet.
 
