@@ -11,8 +11,11 @@ DISCLAIMER : THIS TEMPLATE HAS BEEN CREATED FOR PERSONNAL USE AS A SIDE PROJECT 
 This setup procedure is suitable for a freshly cloned folder (from git) on a fresh machine.
 
 REQUIREMENTS :
+
 => PYTHON 3.10.4 OR LATER ;
+
 => NODE.JS 12.22.9 OR LATER ;
+
 => NPM 8.15.0 OR LATER ;
 
 All other required packages and dependencies will be installed during the setup process. You'll find the full list of required packages in the requirement.txt and package.json files.
@@ -207,7 +210,7 @@ This folder is only used in a devloppement environement. When switching in produ
 
 => runtime.txt : This file tells Heroku which version of python is used by the app.
 
-=> Dockerfile : This file contains all the instructions required by docker to build a container image.
+=> dockerfile : This file contains all the instructions required by docker to build a container image.
 
 => .dockerignore : This file lists all files and folder to leave aside the image building process
 
