@@ -175,4 +175,12 @@ To do this add them to the dockerfile between the line COPY and the line RUN :
     ENV SECRET_KEY=your_django_secret_key
     ENV MONGO_URI=your_mongo_uri
 
+# C. Building the image
 
+To build the image run the following command :
+    $ docker build -t django-react-template .
+
+To test the image run the following command :
+    $ docker run -dp 8000:8000 django-react-template
+
+If the build process went ok the app should be available at the address: localhost:8000
